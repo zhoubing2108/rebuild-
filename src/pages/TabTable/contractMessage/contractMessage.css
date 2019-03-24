@@ -1,0 +1,67 @@
+body {
+    font-family: arial;
+  }
+
+  .mytable {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 auto;
+  }
+
+  .mytr {
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+
+  .mytd {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .myth {
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .mytable {
+      border: 0;
+    }
+
+    .mythead {
+      display: none;
+    }
+
+    .mytr {
+      margin-bottom: 10px;
+      display: block;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .mytd {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    .mytd:last-child {
+      border-bottom: 0;
+    }
+
+    .mytd:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
