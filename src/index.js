@@ -8,7 +8,8 @@ import {
 	Switch,
 	Redirect
 } from 'react-router-dom';
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
+
 
 
 import loaderHome from 'bundle-loader?lazy&name=home!./pages/Home'
@@ -91,8 +92,6 @@ const ContractMessage = (props) => (
 const App = () => (
 	<Router>
 		<Switch>
-		
-			
 			<Route exact path="/" component={MyHome}/>
 			<Route path="/testlogin" component={TestLogin}/>
 			<Route path="/login" component={Login}/>

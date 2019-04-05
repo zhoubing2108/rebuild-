@@ -33,6 +33,7 @@ export default class TestLogin extends React.Component {
     render() {
         return (
             <div>
+            555
             </div>
             // <Page transition={true} infiniteLoader={true} ptr={false}>
 

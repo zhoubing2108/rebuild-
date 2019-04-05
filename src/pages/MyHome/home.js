@@ -25,7 +25,7 @@ const {
 class Home extends Component {
 	render() {
 		return (
-			<div>
+			<span>
 				<MyHeader />
 				<Layout>
 				    <Layout>
@@ -54,7 +54,7 @@ class Home extends Component {
 				      </Layout>
 				    </Layout>
 				</Layout>
-			</div>
+			</span>
 		)
 	}
 }

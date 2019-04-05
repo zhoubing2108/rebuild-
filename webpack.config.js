@@ -67,29 +67,46 @@ module.exports = {
 			// 		presets: ['env', 'react', 'stage-2'], //babel编译es6以上语法以及jsx语法
 			// 	}
 			// },
-
 			{
 				test: /\.css$/,
 				exclude: /node_modules|antd\.css/,
-				use: [{
-					loader: 'style-loader',
-				}, {
-					loader: 'css-loader',
-					options: {
-						importLoaders: 1,
-						modules: true
-					}
-				}, {
-					loader: 'postcss-loader',
-					options: {
-						plugins: () => [
-							require('autoprefixer'), //自动添加浏览器前缀
-							require('precss'), //如果要使用less就不用这个插件了，precss语法类似于sass
-							require('postcss-flexbugs-fixes') //解决flex布局的一些bug
-						]
-					}
+				// use: [{
+				// 	loader: 'style-loader',
+				// }, {
+				// 	loader: 'css-loader',
+				// 	options: {
+				// 		importLoaders: 1,
+				// 		modules: true
+				// 	}
+				// }, {
+				// 	loader: 'postcss-loader',
+				// 	options: {
+				// 		plugins: () => [
+				// 			require('autoprefixer'), //自动添加浏览器前缀
+				// 			require('precss'), //如果要使用less就不用这个插件了，precss语法类似于sass
+				// 			require('postcss-flexbugs-fixes') //解决flex布局的一些bug
+				// 		]
+				// 	}
 
-				}, ]
+				// }, ]
+				use: [
+					require.resolve('style-loader'), {
+						loader: require.resolve('css-loader'),
+						options: {
+							importLoaders: 1,
+							modules: true
+						},
+					}, {
+						loader: require.resolve('postcss-loader'),
+						options: {
+							plugins: () => [
+								require('autoprefixer'), //自动添加浏览器前缀
+								require('precss'), //如果要使用less就不用这个插件了，precss语法类似于sass
+								require('postcss-flexbugs-fixes') //解决flex布局的一些bug
+							]
+						},
+					},
+				],
 			}, {
 				test: /\.css$/,
 				include: /node_modules|antd\.css/,
@@ -111,7 +128,9 @@ module.exports = {
 						},
 					},
 				],
-			}, {
+			},
+
+			{
 				test: [/\.gif$/, /\.jpe?g$/, /\.png$/],
 				loader: 'url-loader',
 				options: {

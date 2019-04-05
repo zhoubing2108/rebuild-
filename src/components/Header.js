@@ -14,6 +14,7 @@ import '../css/header.css'
 class Header extends Component {
 	render() {
 		return (
+			<div className="active">
 			<header style={{borderBottom: '2px solid red'}}>
 				<nav>
 					<Row>
@@ -25,9 +26,10 @@ class Header extends Component {
 				      <Col span={3}><NavLink to="/joinUs">我们</NavLink></Col>
 				      <Col span={3}><NavLink to="/testlogin">登录</NavLink></Col>
 				      <Col span={3}><NavLink to="/hometab">低栏</NavLink></Col>
-				    </Row>
+ 					</Row>
 				</nav>
 			</header>
+			</div>
 		)
 	}
 }
@@ -35,12 +37,3 @@ class Header extends Component {
 
 
 export default Header
-
-// <ul>
-// 	<li><NavLink exact to="/">首页</NavLink></li>
-// 	<li><NavLink to="/news">新闻</NavLink></li>
-// 	<li><NavLink to='/course'>课程</NavLink></li>
-// 	<li><NavLink to="/joinUs">加入我们</NavLink></li>
-// 	<li><NavLink to="/testlogin">测试手机登录</NavLink></li>
-// 	<li><NavLink to="/hometab">低栏测试</NavLink></li>
-// </ul>

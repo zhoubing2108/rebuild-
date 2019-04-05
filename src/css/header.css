@@ -21,27 +21,33 @@ header {
 		text-align: center;
 		border-left: 1px solid $lineGrayColor;
 	}
+
 	a {
 	    text-decoration: none;
-	    color: $fontGrayColor;
 	    font-size: 1.5rem;
 	    padding: 0.8em 0.8em;
 	    display: block;
 	    text-align: center;
 	}
+	
+	
 	a:hover {
-		color: #000;
+		background-color: #1890ff;
+		color:$bgGrayColor;
+		text-decoration: underline;
 	}
-	a.active {
+	a:active {
 		background-color: $fontGrayColor;
-		color: #fff;
+		color:blue;
+	}
+		a:visited {
+		background-color: $fontGrayColor;
+		color:#1890ff;
+		text-decoration: none;
+
 	}
 }
+:global(.active){
+		background-color:#ADADAD;
+};
 
-/*:global(.logo) {
-  width: 120px;
-  height: 31px;
-  background: rgba(255,255,255,.2);  
-  margin: 16px 28px 16px 0;
-  float: left;
-}*/
